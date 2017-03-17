@@ -1,0 +1,66 @@
+#container {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 1200px;
+    height: 700px;
+}
+
+#for-map-form {
+    margin-bottom: 70px;
+}
+
+h3 {
+    border-bottom: thin solid rgba(25,29,13,0.57);
+}
+
+.item {
+    float: left;
+    margin-right: 15px;
+}
+
+label, input {
+    display: block;
+}
+
+label.hidden {
+    color: transparent;
+}
+
+.map {
+    height: 600px;
+    width: 1000px;
+}
+
+.map-content {
+    height: 100%;
+    width: 100%;
+}
+
+.manage-custom {
+    top: 80px;
+    left: 0.5em;
+}
+
+#layer-select {
+    margin-top: 10px;
+}
+
+#for-shape-form {
+    position: absolute;
+    width: 180px;
+    height: 300px;
+    left: 1010px;
+    display: none;
+}
+
+#desc-shape {
+    resize: none;
+}
+
+.form-style {
+    margin-bottom: 10px;
+}

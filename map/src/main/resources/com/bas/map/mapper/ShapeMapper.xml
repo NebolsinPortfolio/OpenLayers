@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bas.map.mapper.ShapeMapper">
+    <resultMap id="ShapeResult" type="Shape">
+        <id property="id" column="ID"/>
+        <result property="name" column="NAME"/>
+        <result property="description" column="DESCRIPTION"/>
+        <association property="type" column="ID_TYPE"
+                     select="com.bas.map.mapper.ShapeTypeMapper.getShapeTypeById" />
+        <collection property="coordinates" column="ID" ofType="Coordinate"
+                    select="com.bas.map.mapper.CoordinateMapper.getCoordinateByShapeId" />
+    </resultMap>
+    <select id="getShapeById" parameterType="java.lang.Long" resultMap="ShapeResult">
+        SELECT * FROM SHAPES
+        WHERE ID = #{id}
+    </select>
+    <select id="getAllShapes" resultMap="ShapeResult">
+        SELECT * FROM SHAPES
+    </select>
+    <insert id="insertShape" parameterType="Shape" useGeneratedKeys="true" keyProperty="id">
+        INSERT INTO SHAPES (ID_TYPE, NAME, DESCRIPTION)
+        VALUES (#{type.id}, #{name}, #{description})
+    </insert>
+    <delete id="deleteAllShapes">
+        DELETE FROM SHAPES
+    </delete>
+</mapper>

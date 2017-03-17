@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Карты OL</title>
+    <link href="css/ol.css" type="text/css" rel="stylesheet" >
+    <link href="css/main.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    <div id="container">
+        <div id="for-map-form">
+            <h3>Карты</h3>
+            <form id="map-form">
+                <!--for future releases
+                <div class="item">
+                    <label for="map-name">Название карты</label>
+                    <input type="text" id="map-name">
+                </div>-->
+                <div class="item">
+                    <label class="hidden">Кнопка</label>
+                    <button type="button" id="btn-save-map">Сохранить</button>
+                </div>
+                <div class="item">
+                    <label class="hidden">Кнопка</label>
+                    <button type="button" id="btn-load-map">Загрузить</button>
+                </div>
+            </form>
+        </div>
+        <div id="for-shape-form">
+            <form id="shape-form">
+                <label class="form-style">Название</label>
+                <input type="text" id="name-shape" class="form-style" size="12">
+                <label class="form-style">Описание</label>
+                <textarea id="desc-shape" class="form-style" rows="3" cols="22"></textarea>
+                <button type="button" id="btn-save-shape">Сохранить</button>
+            </form>
+        </div>
+        <div id="map" class="map">
+            <div id="google-map" class="map-content"></div>
+            <div id="ol-map" class="map-content"></div>
+        </div>
+
+        <div>
+            <select id="layer-select">
+                <option value="osm" >OSM</option>
+                <option value="google" selected>GMap</option>
+            </select>
+        </div>
+
+    </div>
+
+    <!--<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=requestAnimationFrame,Element.prototype.classList"></script>-->
+    <script src="https://maps.googleapis.com/maps/api/js?v=3&key=AIzaSyAHCdFaBwXq6IoCvsDXykazhXRf_WuQJAk"></script>
+    <script src="js/ol-debug.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/modal_box.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
